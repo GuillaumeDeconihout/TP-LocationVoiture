@@ -1,5 +1,6 @@
 package fr.treeptik.locationvoiture.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
@@ -23,6 +24,14 @@ public class VoitureDAOJPA extends GenericDAOJPA<Voiture, Integer> implements Vo
 		TypedQuery<Reservation> query = entitymanager.createQuery("select res from Reservation res where res.voiture.id=:id",Reservation.class);
 		query.setParameter("id", id);
 		return query.getResultList();
+	}
+
+	@Override
+	public List<Voiture> findAllConcatSort() throws DAOException {
+		List<Voiture> voitures = new ArrayList<>(10);
+		TypedQuery<Voiture> query = entitymanager.createQuery("select voi from Voiture voi order by voi.marque,voi.modele",Voiture.class);
+		voitures = query.getResultList();
+		return voitures;
 	}
 
 }
