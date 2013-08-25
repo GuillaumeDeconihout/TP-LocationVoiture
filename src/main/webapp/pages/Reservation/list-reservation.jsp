@@ -18,6 +18,9 @@
 		<tr>
 			<td><a href="reservation.do">Nouvelle Réservation</a></td>
 		</tr>
+		<tr>
+			<td><a href="recherche-vehicules-dispo.do">Véhicules disponibles</a></td>
+		</tr>
 	</table>
 	<br />
 	<table border=1>

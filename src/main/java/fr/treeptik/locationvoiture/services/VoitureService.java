@@ -1,5 +1,6 @@
 package fr.treeptik.locationvoiture.services;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -23,5 +24,7 @@ public interface VoitureService {
 	boolean hasReservation(Integer id) throws ServiceException;
 
 	List<Voiture> findAllConcatSort() throws ServiceException;
+	
+	List<Voiture> findAllAvailableByPeriod(Date datePrise, Date dateRetour) throws ServiceException;
 
 }
