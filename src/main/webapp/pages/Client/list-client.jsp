@@ -3,6 +3,8 @@
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,7 +31,9 @@
 			<td>Nom</td>
 			<td>Prenom</td>
 			<td>Email</td>
-			<td colspan="2">Action</td>
+			<security:authorize ifAllGranted="ROLE_ADMIN">
+				<td colspan="2">Action</td>
+			</security:authorize>
 		</tr>
 		<c:forEach items="${clients}" var="c">
 			<tr>
@@ -37,8 +41,10 @@
 				<td>${c.nom}</td>
 				<td>${c.prenom}</td>
 				<td>${c.email}</td>
+				<security:authorize ifAllGranted="ROLE_ADMIN">
 				<td><a href="modifierclient.do?id=${c.id}">Modifier</a></td>
 				<td><a href="supprimerclient.do?id=${c.id}">Supprimer</a></td>
+				</security:authorize>
 			</tr>
 		</c:forEach>
 	</table>

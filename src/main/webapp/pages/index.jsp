@@ -9,25 +9,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/pages/header.css" />" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/pages/footer.css" />" />
 <title>Accueil Location Voiture</title>
 </head>
 <body>
-	<h1>Locations de Voitures</h1>
-	<br />
-
-
-<table border=1>
-		<tr>
-			<td><a href="Client/index.do">Clients</a></td>
-		</tr>
-		<tr>
-			<td><a href="Voiture/index.do">Voitures</a></td>
-		</tr>
-		<tr>
-			<td><a href="Reservation/index.do">Reservations</a></td>
-		</tr>
-		
-	</table>
-
+	<jsp:include page="header.jsp" />
+	<div id="corps">
+		<h1>Accueil</h1>
+		<br />
+		<table border=1>
+			<tr>
+				<td><a href="Client/index.do">Clients</a></td>
+			</tr>
+			<tr>
+				<td><a href="Voiture/index.do">Voitures</a></td>
+			</tr>
+			<tr>
+				<td><a href="Reservation/index.do">Reservations</a></td>
+			</tr>
+		</table>
+	</div>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

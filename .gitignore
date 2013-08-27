@@ -38,3 +38,10 @@ target/
 *.jar
 *.war
 *.ear
+
+### SQL ###
+*.sql
+
+### TILDE ~ ###
+*.*~
+

@@ -12,6 +12,7 @@
 		<version.java>1.7</version.java>
 		<hibernate.version>4.2.3.Final</hibernate.version>
 		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring.security.version>3.1.4.RELEASE</spring.security.version>
 		<version.maven.jar.plugin>2.4</version.maven.jar.plugin>
 		<version.maven.compiler.plugin>2.5.1</version.maven.compiler.plugin>
 		<version.maven.exec.plugin>1.2.1</version.maven.exec.plugin>
@@ -105,7 +106,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<!-- Base de données MYSQL -->
 
 		<dependency>
@@ -114,11 +115,37 @@
 			<version>5.1.25</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.0.1.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-faces</artifactId>
+			<version>2.3.2.RELEASE</version>
 		</dependency>
 
 	</dependencies>
