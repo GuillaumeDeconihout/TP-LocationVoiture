@@ -210,7 +210,7 @@
 		<profile>
 			<id>PROD</id>
 			<properties>
-				<application.log.severity>WARN</application.log.severity>
+				<application.log.severity>ERROR</application.log.severity>
 			</properties>
 		</profile>
 	</profiles>
