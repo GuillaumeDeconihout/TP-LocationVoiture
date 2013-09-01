@@ -80,6 +80,12 @@ public class Client implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "Client [Id=" + Id + ", nom=" + nom + ", prenom=" + prenom
+				+ ", email=" + email + "]";
+	}
 	
 	
 }

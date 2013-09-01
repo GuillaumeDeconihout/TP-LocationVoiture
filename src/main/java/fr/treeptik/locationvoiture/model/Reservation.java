@@ -108,5 +108,13 @@ public class Reservation implements Serializable{
 	public void setDateRetourVehicule(Date dateRetourVehicule) {
 		this.dateRetourVehicule = dateRetourVehicule;
 	}
+
+	@Override
+	public String toString() {
+		return "Reservation [Id=" + Id + ", voiture=" + voiture + ", client="
+				+ client + ", dateReservation=" + dateReservation
+				+ ", datePriseVehicule=" + datePriseVehicule
+				+ ", dateRetourVehicule=" + dateRetourVehicule + "]";
+	}
 	
 }

@@ -96,6 +96,13 @@ public class Voiture implements Serializable{
 	public void setDateMiseEnCirculation(Date dateMiseEnCirculation) {
 		this.dateMiseEnCirculation = dateMiseEnCirculation;
 	}
+
+	@Override
+	public String toString() {
+		return "Voiture [Id=" + Id + ", marque=" + marque + ", modele="
+				+ modele + ", dateMiseEnCirculation=" + dateMiseEnCirculation
+				+ "]";
+	}
 	
 	
 

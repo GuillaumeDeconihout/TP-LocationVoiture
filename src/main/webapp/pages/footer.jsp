@@ -6,6 +6,6 @@
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
 
-<div id="footer">
-	<h1>@copyright - Gardane Auto - 2013</h1>
+<div class="container">
+	<p>@copyright - Gardane Auto - 2013</p>
 </div>
