@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import fr.treeptik.locationvoiture.exception.ServiceException;
 import fr.treeptik.locationvoiture.model.Voiture;
 
-@Service
 public interface VoitureService {
 
 	Voiture save(Voiture voiture) throws ServiceException;

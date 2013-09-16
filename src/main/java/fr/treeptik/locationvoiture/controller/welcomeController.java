@@ -11,7 +11,6 @@ public class welcomeController {
 	@RequestMapping(value = "/index.do", method = RequestMethod.GET)
 	public ModelAndView initForm() {
 		ModelAndView modelAndView = new ModelAndView("index");
-		
 		return modelAndView;
 	}
 

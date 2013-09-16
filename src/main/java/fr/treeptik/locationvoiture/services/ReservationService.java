@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import fr.treeptik.locationvoiture.exception.ServiceException;
 import fr.treeptik.locationvoiture.model.Reservation;
 
-@Service
 public interface ReservationService {
 
 	Reservation save(Reservation reservation) throws ServiceException;
