@@ -23,7 +23,7 @@ import fr.treeptik.locationvoiture.utilies.Periode;
 import fr.treeptik.locationvoiture.validator.ReservationValidator;
 
 @Controller
-@RequestMapping(value = "Reservation")
+@RequestMapping(value = "reservation")
 public class ReservationController {
 
 	@Autowired
@@ -45,7 +45,7 @@ public class ReservationController {
 		List<Voiture> listVoitures = voitureService.findAllConcatSort();
 
 		ModelAndView modelAndView = new ModelAndView(
-				"Reservation/saisie-reservation", "reservation", reservation);
+				"reservation/saisie-reservation", "reservation", reservation);
 
 		modelAndView.addObject("clients", listClients);
 		modelAndView.addObject("voitures", listVoitures);
@@ -75,7 +75,7 @@ public class ReservationController {
 			throws ServiceException {
 		Reservation reservation = reservationService.findById(id);
 		ModelAndView modelAndView = new ModelAndView(
-				"Reservation/modification-reservation", "reservation",
+				"reservation/modification-reservation", "reservation",
 				reservation);
 
 		List<Client> listClients = clientService.findAllConcatSort();
@@ -93,7 +93,7 @@ public class ReservationController {
 
 		if (errors.hasErrors()) {
 			ModelAndView modelAndView = new ModelAndView(
-					"Reservation/modification-reservation", "reservation",
+					"reservation/modification-reservation", "reservation",
 					reservation);
 
 			List<Client> listClients = clientService.findAllConcatSort();
@@ -107,7 +107,7 @@ public class ReservationController {
 			validator.validate(reservation, errors);
 			if (errors.hasErrors()) {
 				ModelAndView modelAndView = new ModelAndView(
-						"Reservation/modification-reservation", "reservation",
+						"reservation/modification-reservation", "reservation",
 						reservation);
 
 				List<Client> listClients = clientService.findAll();
@@ -135,7 +135,7 @@ public class ReservationController {
 	public ModelAndView listerReservation() throws ServiceException {
 		List<Reservation> reservations = reservationService.findAll();
 		ModelAndView modelAndView = new ModelAndView(
-				"Reservation/list-reservation", "reservations", reservations);
+				"reservation/list-reservation", "reservations", reservations);
 		return modelAndView;
 	}
 
@@ -143,7 +143,7 @@ public class ReservationController {
 	public ModelAndView searchAvailablesCars() throws ServiceException {
 		Periode periode = new Periode();
 		ModelAndView modelAndView = new ModelAndView(
-				"Reservation/recherche-vehicule-dispo","periode",periode);
+				"reservation/recherche-vehicule-dispo","periode",periode);
 		return modelAndView;
 	}
 	
@@ -151,7 +151,7 @@ public class ReservationController {
 	public ModelAndView DisplayAvailablesCars(Periode periode) throws ServiceException {
 		List<Voiture> voitures = voitureService.findAllAvailableByPeriod(periode.getDateDebut(),periode.getDateFin());
 		ModelAndView modelAndView = new ModelAndView(
-				"Reservation/list-vehicule-dispo","voitures",voitures);
+				"reservation/list-vehicule-dispo","voitures",voitures);
 		return modelAndView;
 	}
 

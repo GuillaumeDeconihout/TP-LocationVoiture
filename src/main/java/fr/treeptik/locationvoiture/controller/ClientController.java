@@ -17,7 +17,7 @@ import fr.treeptik.locationvoiture.model.Client;
 import fr.treeptik.locationvoiture.services.ClientService;
 
 @Controller
-@RequestMapping(value = "Client")
+@RequestMapping(value = "client")
 public class ClientController {
 
 	@Autowired
@@ -26,7 +26,7 @@ public class ClientController {
 	@RequestMapping(value = "/client.do", method = RequestMethod.GET)
 	public ModelAndView initForm() {
 		Client client = new Client();
-		ModelAndView modelAndView = new ModelAndView("Client/saisie-client",
+		ModelAndView modelAndView = new ModelAndView("client/saisie-client",
 				"client", client);
 		return modelAndView;
 	}
@@ -37,7 +37,7 @@ public class ClientController {
 
 		if (errors.hasErrors()) {
 			ModelAndView modelAndView = new ModelAndView(
-					"Client/saisie-client", "client", client);
+					"client/saisie-client", "client", client);
 			return modelAndView;
 		}
 		client = clientService.save(client);
@@ -49,7 +49,7 @@ public class ClientController {
 			throws ServiceException {
 		Client client = clientService.findById(id);
 		ModelAndView modelAndView = new ModelAndView(
-				"Client/modification-client", "client", client);
+				"client/modification-client", "client", client);
 		return modelAndView;
 	}
 
@@ -58,7 +58,7 @@ public class ClientController {
 			throws ServiceException {
 		if (errors.hasErrors()) {
 			ModelAndView modelAndView = new ModelAndView(
-					"Client/modification-client", "client", client);
+					"client/modification-client", "client", client);
 			return modelAndView;
 		}
 		client = clientService.update(client);
@@ -78,7 +78,7 @@ public class ClientController {
 	@RequestMapping(value = { "/index.do", "/listerclient.do" }, method = RequestMethod.GET)
 	public ModelAndView listerClient() throws ServiceException {
 		List<Client> clients = clientService.findAll();
-		ModelAndView modelAndView = new ModelAndView("Client/list-client",
+		ModelAndView modelAndView = new ModelAndView("client/list-client",
 				"clients", clients);
 		return modelAndView;
 	}

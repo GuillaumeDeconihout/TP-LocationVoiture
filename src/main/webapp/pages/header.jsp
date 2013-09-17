@@ -19,9 +19,9 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Accueil</a></li>
-				<li><a href="Voiture/index.do">Voitures</a></li>
-				<li><a href="#Client/index.do">Clients</a></li>
-				<li><a href="#Reservation/index.do">Reservations</a></li>
+				<li><a href="/location-voiture/voiture/index.do">Voitures</a></li>
+				<li><a href="/location-voiture/client/index.do">Clients</a></li>
+				<li><a href="/location-voiture/reservation/index.do">Reservations</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Bienvenue <security:authentication property="principal.username" /></a> </li>

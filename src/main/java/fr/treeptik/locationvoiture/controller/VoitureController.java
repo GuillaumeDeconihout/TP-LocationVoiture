@@ -18,7 +18,7 @@ import fr.treeptik.locationvoiture.services.VoitureService;
 import fr.treeptik.locationvoiture.validator.VoitureValidator;
 
 @Controller
-@RequestMapping(value = "Voiture")
+@RequestMapping(value = "voiture")
 public class VoitureController {
 
 	@Autowired
@@ -31,7 +31,7 @@ public class VoitureController {
 	@RequestMapping(value = "/voiture.do", method = RequestMethod.GET)
 	public ModelAndView initForm() {
 		Voiture voiture = new Voiture();
-		ModelAndView modelAndView = new ModelAndView("Voiture/saisie-voiture",
+		ModelAndView modelAndView = new ModelAndView("voiture/saisie-voiture",
 				"voiture", voiture);
 		return modelAndView;
 	}
@@ -42,7 +42,7 @@ public class VoitureController {
 		validator.validate(voiture, errors);
 		
 		if(errors.hasErrors()){
-			ModelAndView modelAndView = new ModelAndView("Voiture/saisie-voiture",
+			ModelAndView modelAndView = new ModelAndView("voiture/saisie-voiture",
 					"voiture", voiture);
 			return modelAndView;
 		}
@@ -54,7 +54,7 @@ public class VoitureController {
 	public ModelAndView modifierVoiture(@RequestParam("id") Integer id)
 			throws ServiceException {
 		Voiture voiture = voitureService.findById(id);
-		ModelAndView modelAndView = new ModelAndView("Voiture/modification-voiture",
+		ModelAndView modelAndView = new ModelAndView("voiture/modification-voiture",
 				"voiture", voiture);
 		return modelAndView;
 	}
@@ -65,7 +65,7 @@ public class VoitureController {
 		validator.validate(voiture, errors);
 		
 		if(errors.hasErrors()){
-			ModelAndView modelAndView = new ModelAndView("Voiture/modification-voiture",
+			ModelAndView modelAndView = new ModelAndView("voiture/modification-voiture",
 					"voiture", voiture);
 			return modelAndView;
 		}
@@ -86,7 +86,7 @@ public class VoitureController {
 	@RequestMapping(value = {"/index.do","/listervoiture.do"}, method = RequestMethod.GET)
 	public ModelAndView listerVoiture() throws ServiceException {
 		List<Voiture> voitures = voitureService.findAll();
-		ModelAndView modelAndView = new ModelAndView("Voiture/list-voiture",
+		ModelAndView modelAndView = new ModelAndView("voiture/list-voiture",
 				"voitures", voitures);
 		return modelAndView;
 	}
