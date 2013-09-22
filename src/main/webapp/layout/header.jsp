@@ -14,11 +14,11 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Gardane Autos</a>
+			<a class="navbar-brand" href="/location-voiture/">Gardane Autos</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Accueil</a></li>
+				<li class="active"><a href="/location-voiture/">Accueil</a></li>
 				<li><a href="/location-voiture/voiture/index.do">Voitures</a></li>
 				<li><a href="/location-voiture/client/index.do">Clients</a></li>
 				<li><a href="/location-voiture/reservation/index.do">Reservations</a></li>

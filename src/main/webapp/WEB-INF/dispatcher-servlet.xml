@@ -66,14 +66,16 @@
 	<security:global-method-security
 		jsr250-annotations="enabled" />
 
-	<security:http pattern="/pages/login.jsp" security="none" />
+	<!-- Login wiew without security -->
+	<security:http pattern="/pages/authentification/login.jsp" security="none" />
+
 
 	<security:http>
-		<security:form-login login-page="/pages/login.jsp"
-			default-target-url="/index.do" />
+		<security:form-login login-page="/pages/authentification/login.jsp"
+			default-target-url="/" />
 		<security:intercept-url pattern="/**"
 			access="ROLE_USER,ROLE_ADMIN" />
-		<security:logout logout-success-url="/pages/login.jsp" />
+		<security:logout logout-success-url="/pages/authentification/login.jsp" />
 	</security:http>
 
 	<security:authentication-manager>
