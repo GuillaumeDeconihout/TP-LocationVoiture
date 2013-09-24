@@ -1,39 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Liste des RÃ©servations</title>
-</head>
-<body>
-	<h1>Liste des RÃ©servations</h1>
+<div class="container">
+	<h1>Liste des réservations</h1>
 	<br />
-	<table border=0>
+	<table>
 		<tr>
-			<td><a href="reservation.do">Nouvelle RÃ©servation</a></td>
+			<td><a href="reservation.do">Nouvelle réservation</a></td>
 		</tr>
 		<tr>
-			<td><a href="recherche-vehicules-dispo.do">VÃ©hicules disponibles</a></td>
+			<td><a href="recherche-vehicules-dispo.do">Véhicules disponibles</a></td>
 		</tr>
 	</table>
 	<br />
-	<table border=1>
+	<table class="table table-striped table-hover">
 		<tr>
-			<td>ID</td>
-			<td>Nom Client</td>
-			<td>Prenom Client</td>
-			<td>Marque Voiture</td>
-			<td>Modele Voiture</td>
-			<td>Date RÃ©servation</td>
-			<td>Date Prise du vÃ©hicule</td>
-			<td>Date Retour du vÃ©hicule</td>
-			<td colspan="2">Action</td>
+			<th>ID</th>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Marque</th>
+			<th>Modèle</th>
+			<th>Date réservation</th>
+			<th>Date départ</th>
+			<th>Date retour</th>
+			<th colspan="2">Action</th>
 		</tr>
 		<c:forEach items="${reservations}" var="r">
 			<tr>
@@ -55,13 +46,11 @@
 	</table>
 
 	<br />
-	<table border=0>
+	<table>
 		<tr>
 			<td><a href="../index.do">Accueil</a></td>
 		</tr>
 	</table>
 
 	<br />
-
-</body>
-</html>
+</div>
