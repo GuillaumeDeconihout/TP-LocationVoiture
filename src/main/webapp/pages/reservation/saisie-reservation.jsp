@@ -1,68 +1,76 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Saisie d'une RÃ©servation</title>
-</head>
-<body>
-	<h1>Saisie Reservation</h1>
+<div class="container">
+
+	<h1>Saisir une réservation</h1>
 	<br />
 
 	<form:form action="reservation.do" commandName="reservation"
-		method="POST">
-
-		<table>
-			<tr>
-				<td>Client:</td>
-				<td><form:select path="client.id">
-						<c:forEach var="client" items="${clients}">
-							<form:option value="${client.id}">
+		method="POST" class="form-horizontal" role="form">
+		<div class="form-group">
+			<form:label path="client" class="col-lg-2 control-label">Client :</form:label>
+			<div class="col-lg-10">
+				<form:select path="client.id" class="form-control">
+					<c:forEach var="client" items="${clients}">
+						<form:option value="${client.id}">
 							${client.nom} ${client.prenom}
 							</form:option>
-						</c:forEach>
-					</form:select></td>
-			</tr>
-			<tr>
-				<td>Voiture:</td>
-				<td><form:select path="voiture.id">
-						<c:forEach var="voiture" items="${voitures}">
-							<form:option value="${voiture.id}">
+					</c:forEach>
+				</form:select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<form:label path="voiture" class="col-lg-2 control-label">Voiture :</form:label>
+			<div class="col-lg-10">
+				<form:select path="voiture.id" class="form-control">
+					<c:forEach var="voiture" items="${voitures}">
+						<form:option value="${voiture.id}">
 							${voiture.marque} ${voiture.modele}
 							</form:option>
-						</c:forEach>
-					</form:select></td>
-			</tr>
-			<tr>
-				<td>Date RÃ©servation:</td>
-				<td><form:input path="dateReservation" /> <form:errors
-						path="dateReservation" /></td>
-			</tr>
-			<tr>
-				<td>Date Prise de vÃ©hicule:</td>
-				<td><form:input path="datePriseVehicule" /> <form:errors
-						path="datePriseVehicule" /></td>
-			</tr>
-			<tr>
-				<td>Date Retour de VÃ©hicule:</td>
-				<td><form:input path="dateRetourVehicule" /> <form:errors
-						path="dateRetourVehicule" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="valider"></td>
-			</tr>
-		</table>
+					</c:forEach>
+				</form:select>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<form:label path="dateReservation"
+				class="col-lg-2 control-label">Date réservation :</form:label>
+			<div class="col-lg-10">
+				<form:input path="dateReservation" class="form-control"
+					placeholder="Date de la réservation" />
+				<form:errors path="dateReservation" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<form:label path="datePriseVehicule"
+				class="col-lg-2 control-label">Date départ :</form:label>
+			<div class="col-lg-10">
+				<form:input path="datePriseVehicule" class="form-control"
+					placeholder="Date de prise de véhicule" />
+				<form:errors path="datePriseVehicule" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<form:label path="dateRetourVehicule"
+				class="col-lg-2 control-label">Date retour  :</form:label>
+			<div class="col-lg-10">
+				<form:input path="dateRetourVehicule" class="form-control"
+					placeholder="Date de retour du véhicule" />
+				<form:errors path="dateRetourVehicule" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<button type="submit" class="btn btn-success">Valider</button>
+			</div>
+		</div>
+
 	</form:form>
-	<br />
-	<table border=0>
-		<tr>
-			<td><a href="listerreservation.do">Annuler</a></td>
-		</tr>
-	</table>
-</body>
-</html>
+<a href="listerreservation.do">Annuler</a>
+</div>

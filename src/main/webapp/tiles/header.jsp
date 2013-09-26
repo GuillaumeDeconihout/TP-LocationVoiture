@@ -24,7 +24,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Bienvenue <security:authentication
 							property="principal.username" /></a></li>
-				<li><a href="<c:url value="j_spring_security_logout" />">
+				<li><a href="<c:url value="/location-voiture/j_spring_security_logout" />">
 						Logout</a></li>
 			</ul>
 		</div>

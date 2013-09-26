@@ -1,46 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<div class="container">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Modification d'un Client</title>
-</head>
-<body>
-	<h1>Modifier Client</h1>
+	<h1>Modifier un client</h1>
 	<br />
 
-	<form:form action="modifierclient.do" commandName="client" method="POST">
-	<form:hidden path="id"/>
-		<table>
-			<tr>
-				<td>Nom:</td>
-				<td><form:input path="nom"/><form:errors path="nom"/></td>
-			</tr>
-			<tr>
-				<td>Prenom</td>
-				<td><form:input path="prenom"/><form:errors path="prenom"/></td>
-			</tr>
-			<tr>
-				<td>Email:</td>
-				<td><form:input path="email"/><form:errors path="email"/></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="valider"></td>
-			</tr>
-		</table>
+	<form:form action="modifierclient.do" commandName="client" method="POST"
+		class="form-horizontal" role="form">
+		<form:hidden path="id" />
+		<div class="form-group">
+			<form:label path="nom" class="col-lg-2 control-label">Nom :</form:label>
+			<div class="col-lg-10">
+				<form:input path="nom" class="form-control" placeholder="Nom"
+					maxlength="64" />
+				<form:errors path="nom" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<form:label path="prenom" class="col-lg-2 control-label">Prénom :</form:label>
+			<div class="col-lg-10">
+				<form:input path="prenom" class="form-control" placeholder="Prénom" />
+				<form:errors path="prenom" />
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<form:label path="email" class="col-lg-2 control-label">Email :</form:label>
+			<div class="col-lg-10">
+				<form:input path="email" class="form-control" placeholder="Email" />
+				<form:errors path="email" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<button type="submit" class="btn btn-success">Valider</button>
+			</div>
+		</div>
+
 	</form:form>
-	
-	<br />
-	<table border=0>
-		<tr>
-			<td><a href="listerclient.do">Annuler</a></td>
-		</tr>
-	</table>
 
-</body>
-</html>
+	<a href="listerclient.do">Annuler</a>
+</div>

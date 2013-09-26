@@ -19,7 +19,7 @@
 			<th>ID</th>
 			<th>Marque</th>
 			<th>Modele</th>
-			<th>Date MEC</th>
+			<th>Date 1ère MEC</th>
 			<th colspan="2">Action</th>
 		</tr>
 		<c:forEach items="${voitures}" var="v">
@@ -29,8 +29,10 @@
 				<td>${v.modele}</td>
 				<td><fmt:formatDate pattern="dd-MM-yyyy"
 						value="${v.dateMiseEnCirculation}" /></td>
-				<td><a href="modifiervoiture.do?id=${v.id}">Modifier</a></td>
-				<td><a href="supprimervoiture.do?id=${v.id}">Supprimer</a></td>
+				<td><a href="modifiervoiture.do?id=${v.id}"><button
+							type="button" class="btn btn-info">Modifier</button></a> <a
+					href="supprimervoiture.do?id=${v.id}"><button type="button"
+							class="btn btn-danger">Supprimer</button></a></td>
 			</tr>
 		</c:forEach>
 	</table>

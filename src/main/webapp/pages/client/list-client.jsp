@@ -4,7 +4,7 @@
 	uri="http://www.springframework.org/security/tags"%>
 
 <div class="container">
-	<h1>Liste des Clients</h1>
+	<h1>Liste des clients</h1>
 	<br />
 	<table>
 		<tr>
@@ -32,8 +32,10 @@
 				<td>${c.prenom}</td>
 				<td>${c.email}</td>
 				<security:authorize ifAllGranted="ROLE_ADMIN">
-					<td><a href="modifierclient.do?id=${c.id}">Modifier</a></td>
-					<td><a href="supprimerclient.do?id=${c.id}">Supprimer</a></td>
+					<td><a href="modifierclient.do?id=${c.id}"><button
+								type="button" class="btn btn-info">Modifier</button></a> <a
+						href="supprimerclient.do?id=${c.id}"><button type="button"
+								class="btn btn-danger">Supprimer</button></a></td>
 				</security:authorize>
 			</tr>
 		</c:forEach>
